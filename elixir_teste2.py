@@ -3,9 +3,7 @@ def nome_principal_programa():
 
 def escolha_opcoes():   #aqui foi criada a função de escolha de opções do restaurante
     print('Opção 1 - Cadastrar nova carta (nome e qtd de elixir): ')
-    print('Opção 2 - Sair.')
-
-    voltar_ao_menu_principal
+    print('Opção 2 - Sair.\n')
 
 def finalizar_programa(): #criação da opç]ao finalizar o programa
     linha_subtitulos('Obrigado por utilizar programa. 👍')
@@ -16,7 +14,7 @@ def opcao_invalida():
     voltar_ao_menu_principal()
 
 def voltar_ao_menu_principal():
-    input('\nDigite uma tecla para voltar ao menu principal\n ')
+    input('\nDigite uma tecla para voltar ao menu principal - \n ')
     main()
 
 def linha_subtitulos(texto):
@@ -31,9 +29,13 @@ def media_elixir_nome_carta():
 
     for calculo in range(8):
         nome = input('Digite o nome da carta: ')
+        try:
         quantidade_elixir = int(input(f'Digite o valor para {nome}: '))
         cartas[nome] = quantidade_elixir
-
+        except ValueError:
+            print('Valor inválido. Use apenas números.')
+            return voltar_ao_menu_principal()
+    
     media = sum(cartas.values()) / len(cartas)
 
     print('_____Lista de cartas registradas_____')
@@ -42,7 +44,7 @@ def media_elixir_nome_carta():
 
     print(f'\nA média final do seu deck é de: {media}\n')
 
-    voltar_ao_menu_principal
+    voltar_ao_menu_principal()
 
 def escolher_opcoes():
     try:
@@ -54,14 +56,14 @@ def escolher_opcoes():
             finalizar_programa()
         else:
             opcao_invalida()
-    except:
+    except valueError:
             opcao_invalida
 
 
 def main():
     nome_principal_programa()
-    escolher_opcoes()
-    finalizar_programa()
+    escolha_opcoes()
+    escolher_opcoes() # fluxo de decisão acontece aqui
     
 
 if __name__ == '__main__':
