@@ -1,7 +1,7 @@
 def nome_principal_programa():
     linha_subtitulos('Média de elixir para acesso 😄') #Nome do programa
 
-def escolha_opcoes():   #aqui foi criada a função de escolha de opções do restaurante
+def exibir_menu():   #aqui foi criada a função de escolha de opções do restaurante
     print('Opção 1 - Cadastrar nova carta (nome e qtd de elixir): ')
     print('Opção 2 - Sair.\n')
 
@@ -62,7 +62,7 @@ def escolher_opcoes():
 
 def main():
     nome_principal_programa()
-    escolha_opcoes()
+    exibir_menu()
     escolher_opcoes() # fluxo de decisão acontece aqui
     
 
