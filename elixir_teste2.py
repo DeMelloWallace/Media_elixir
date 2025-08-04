@@ -30,12 +30,21 @@ def media_elixir_nome_carta():
     for calculo in range(8):
         nome = input('Digite o nome da carta: ')
         try:
+<<<<<<< HEAD
         quantidade_elixir = int(input(f'Digite o valor para {nome}: '))
         cartas[nome] = quantidade_elixir
         except ValueError:
             print('Valor inválido. Use apenas números.')
             return voltar_ao_menu_principal()
     
+=======
+            quantidade_elixir = int(input(f'Digite o valor para {nome}: '))
+            cartas[nome] = quantidade_elixir
+        except ValueError:
+            print('Valor inválido. Use apenas números.')
+            return voltar_ao_menu_principal()
+
+>>>>>>> fefcc16 (Teste unitario(escolher opcoes))
     media = sum(cartas.values()) / len(cartas)
 
     print('_____Lista de cartas registradas_____')
@@ -56,13 +65,21 @@ def escolher_opcoes():
             finalizar_programa()
         else:
             opcao_invalida()
+<<<<<<< HEAD
     except valueError:
+=======
+    except ValueError:
+>>>>>>> fefcc16 (Teste unitario(escolher opcoes))
             opcao_invalida()
 
 
 def main():
     nome_principal_programa()
+<<<<<<< HEAD
     exibir_menu()
+=======
+    escolha_opcoes()
+>>>>>>> fefcc16 (Teste unitario(escolher opcoes))
     escolher_opcoes() # fluxo de decisão acontece aqui
     
 
