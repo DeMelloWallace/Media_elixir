@@ -57,7 +57,7 @@ def escolher_opcoes():
         else:
             opcao_invalida()
     except valueError:
-            opcao_invalida
+            opcao_invalida()
 
 
 def main():
